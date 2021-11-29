@@ -1,0 +1,123 @@
+//====================================================================================================
+.header {
+	z-index: 5;
+	position: absolute;
+	top: 0;
+	left: auto;
+	height: 72px;
+	width: 1440px;
+	padding: 0 100px;
+	background:transparent;
+}
+
+.rem-header {
+	display: flex;
+	padding: 0 !important;
+	justify-content: space-between;
+
+		&__logo {
+			margin: 19px 0 0 0;
+			position: relative;
+			width: 139px;
+			height: 35px;
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+
+		&__block {
+			margin: 18px 0;
+			display: flex;
+			align-items: end;
+		}
+
+		&__links {
+			
+			a {
+				font-weight: 500;
+				font-size: 15px;
+				line-height: 20px;
+				color: $color-prim-200;
+				margin: 0 40px 0 0;
+
+			}
+			:last-child {
+				margin: 0;
+			}
+		}
+
+		&__social {
+			display: flex;
+			margin: 0 0 0 45px;
+		}
+}
+.soc {
+	margin: 0 31px 0 0;
+	position: relative;
+	height: 18px;
+	width: 18px;
+}
+.inst {
+}
+
+.soc img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+}
+
+//====================================================================================================
+
+/*
+//Burger
+.icon-menu {
+	display: none;
+	@media (max-width: $md3+px) {
+		display: block;
+		position: absolute;
+		top: 18px;
+		right: 10px;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span {
+			transition: all 0.3s ease 0s;
+			top: calc(50% - 1px);
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+			&:first-child {
+				top: 0px;
+			}
+			&:last-child {
+				top: auto;
+				bottom: 0px;
+			}
+		}
+		&._active {
+			span {
+				transform: scale(0);
+				&:first-child {
+					transform: rotate(-45deg);
+					top: calc(50% - 1px);
+				}
+				&:last-child {
+					transform: rotate(45deg);
+					bottom: calc(50% - 1px);
+				}
+			}
+		}
+	}
+}
+*/

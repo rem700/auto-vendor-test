@@ -1,0 +1,726 @@
+@use "sass:math";
+//<МИКСИНЫ>===============================================================================================
+@import "mixins";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+//&display=swap&subset=cyrillic-ext
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Poppins:wght@700&display=swap');
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+//@import "icons";
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: "Noto Sans";
+$fontSize: 16;
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>==========================================================================================================
+$minWidth: 320px;
+/*$maxWidth: 1920;
+$maxWidthContainer: 1170;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$mainColor: #000; */
+
+$color-prim-100: #000000;
+$color-prim-200: #f8f8f8;
+$color-prim-300: #DF4E3C;
+
+$color-sec-100: #AEAEAE;
+$color-sec-200: #8D8D8D;
+$color-sec-300: #BDBDBD;
+$color-sec-400: #C4C4C4;
+$color-sec-500: #ffffff;
+$color-sec-600: #959595;
+$color-sec-700: #507A36;
+
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null";
+body {
+	font-family: $fontFamily;
+	color: $color-prim-200;
+	&._lock {
+		overflow: hidden;
+	}
+}
+section {
+	padding: 0 !important;
+}
+img {
+	padding: 0 !important;
+}
+h2 {
+	font-family: 'Poppins';
+	font-weight: bold;
+	font-size: 50px;
+}
+
+form {
+	padding: 0 !important;
+}
+
+div {
+	padding: 0 !important;
+}
+
+button {
+	margin: 0 !important;
+}
+
+ul {
+	li {margin: 0 !important;
+	padding: 0 !important;}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	background: $color-sec-600;
+//&._loaded {
+//	}
+}
+
+.container {
+	max-width: 1440px;
+	padding: 0 !important;
+}
+
+.col, .col-3, .col-12, .col-4, .col-xxl-6, .col-lg-12, .col-xxl-3, .col-md-12, .row-cols-6 {
+	padding: 0 !important;
+	
+}
+
+.row {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "datepicker";
+//@import "lightgallery";
+//@import "pagging";
+@import "popup";
+@import "header";
+@import "footer";
+@import "home";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.page {
+	margin: 0 auto;
+	flex: 1 1 auto;
+	width: 1440px;
+	background: $color-prim-200;
+}
+//===================================================================================================================================
+
+
+
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+.hut {
+	position: relative;
+	color: $color-prim-200;
+	
+}
+
+.rem-img {
+	width: 1440px;
+	height: 686px;
+	position: relative;
+	img {
+		position: absolute;
+		top: 0; 
+		left: 0;
+		height: 100%; width: 100%;
+		object-fit: cover;
+
+	} 
+}
+.title {
+	margin: 190px 0 0 100px;
+	position: absolute;
+	top: 0;
+	left: auto;
+
+
+	&__title {
+		font-weight: bold;
+		font-size: 50px;
+		line-height: 68px;
+	}
+
+	&__text {
+		margin: 32px 0 0 0;
+		font-size: 15px;
+		line-height: 20px;
+	}
+}
+
+.rem-col {
+	width: 24%;
+}
+
+.rem-btn1 {
+	margin: 72px 0 0 0;
+	width: 296px;
+	height: 56px;
+	border: 2px solid $color-prim-200;
+	transition: all 0.3s ease;
+	border-radius: 15px;
+	text-align: center;
+	&__text{
+		margin: -2px;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 56px;
+		border-radius: 15px;
+		a {
+			color: $color-prim-200
+		}
+	}
+
+	:hover {
+		transition: all 0.3s ease;
+		margin: -2px;
+		background: $color-prim-200;
+		a {
+			color: $color-prim-100;
+		}	
+	}
+}
+
+
+//===================================================================================================================================
+
+.offers {
+	width: 1440px;
+	
+	margin: 0 0 120px 0;
+
+	&__title {
+		text-align: center;
+		margin: 98px 0 0 0;
+		color: $color-sec-100
+	}
+
+	&__dropgroup {
+		margin: 80px 100px 0 100px;
+	}
+
+	&__check {
+		margin: 25px 100px 0 100px;
+	}
+
+	&__gridgroup {
+		margin: 23px 100px 0 100px;
+		display: grid;
+		grid-template: 366px / repeat(4,295px);
+		grid-auto-flow: row;
+		gap: 20px;
+	}
+}
+
+.custom-dropdown-toggle::after{
+	border: none !important;
+	position: absolute;
+	content: ' ';
+	right: 16px;
+	background: url('../img/icons/expand.png') 100% 0/100% 100% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+
+.custom-dropdown-toggle:focus {
+	box-shadow: none;
+}
+
+.rem-dd {
+	width: 170px !important;
+	height: 48px !important;
+	&__btn:not(.show) {
+		font-weight: normal !important;
+		background: $color-prim-200;
+	}
+	&__btn {
+		width: 170px !important;
+		height: 48px !important;
+		border: 1px solid $color-sec-300;
+		box-sizing: border-box;
+		border-radius: 15px;
+		font-weight: 600;
+		font-size: 15px;
+		line-height: 20px;
+		text-align: left;
+		padding: 0 0 0 16px;
+		color: $color-prim-100;
+		background: $color-sec-500;
+		
+	}
+	
+	&__menu {
+		inset: none !important;
+		transform: translate3d(0px, 35px, 0px) !important;
+		width: 170px !important;
+		border: 1px solid $color-sec-300;
+		border-top: transparent;
+		border-top-right-radius: 0 !important;
+		border-top-left-radius: 0 !important;
+		box-sizing: border-box;
+		border-radius: 15px;
+	}
+	&__item {
+		font-weight: normal;
+		font-size: 15px;
+		line-height: 20px;
+		text-align: left;
+		padding: 10px 16px;
+	}
+}
+
+.rem-btn2 {
+	display: block;
+	width: 290px;
+	height: 48px;
+	background:$color-prim-300;
+	border-radius: 15px;
+	font-size: 15px;
+	line-height: 20px;
+	color: $color-prim-200;
+}
+.rem-col2 {
+	width: 170px !important;
+	margin: 0 20px 0 0;
+	padding: 0 !important;
+}
+
+.check {
+	margin: 0 0 0 25px;
+	input {
+		
+		width: 16px;
+		height: 16px;
+		border: 1px solid $color-sec-200;
+		box-sizing: border-box;
+		border-radius: 3px;
+		background: transparent;
+	}
+	label {
+		margin: 4px 0 0 8px;
+		font-size: 12px;
+		line-height: 16px;
+		color: $color-sec-200;
+	}
+}
+
+.form-check-input:checked:focus, .form-check-input:checked:not(focus) {
+	background-color: $color-prim-300;
+	border-color: $color-prim-300;
+	
+}
+.form-check-input:focus {
+	box-shadow: none;
+	border-color: $color-sec-200;
+}
+.form-check-input:checked ~ .form-check-label {
+	color: $color-prim-300;
+}
+
+
+.filters {
+	justify-content: flex-end;
+	display: flex;
+	margin: 3px 0 0 0;
+	:hover > &__subtext{
+		color: $color-prim-300 !important;
+	}
+	&__text {
+		text-align: right;
+		font-size: 12px;
+		line-height: 16px;
+		color: $color-prim-100;
+		margin: -1px 37px 0 0;
+		}
+	&__btn5 {
+		border-radius: 0;
+		position: relative;
+		
+	}
+	&__btn5::after{
+		border: none !important;
+		position: absolute;
+		content: ' ';
+		left: -18px;
+		top: 3px;
+		background: url('../img/icons/arrowDown.png') 100% 0/100% 100% no-repeat;
+		width: 6px;
+		height: 8px;
+	}
+	&__btn5::before{
+		border: none !important;
+		position: absolute;
+		content: ' ';
+		top: 0px;
+		left: -22px;
+		background: url('../img/icons/arrowUPorange.png') 100% 0/100% 100% no-repeat;
+		width: 6px;
+		height: 8px;
+	}
+	&__btn5:focus {
+		box-shadow: none;
+	}
+	&__subtext {
+		width: 160px;
+		margin: -3px 0 0 0;
+		font-size: 12px;
+		line-height: 16px;
+		color: $color-sec-200;
+		:focus {
+			box-shadow: none;
+		}
+	}
+	&__menu {
+		background: $color-sec-500;
+		border-radius: 15px;
+		border: none;
+	}
+	&__item {
+		padding: 6px 12px;
+		font-weight: normal;
+		font-size: 12px;
+		line-height: 16px;
+		color:$color-prim-100;
+		:hover > a {color:$color-prim-300;
+		}
+	}
+
+}
+.dropdown-menu li:hover > .dropdown-item {
+	color: $color-prim-300 !important;
+	background: none;
+}
+
+
+
+.car {
+
+	background:$color-sec-500;
+	box-shadow: 0px 0px 18px rgba(68, 68, 68, 0.09);
+	width: 295px;
+	height: 366px;
+	margin: 0 20px 20px 0;
+	
+	&__photo {
+		width: 295px;
+		height: 200px;
+		position: relative;
+		img {
+			position: absolute;
+			top: 0; 
+			left: 0;
+			height: 100%; 
+			width: 100%;
+			object-fit: cover;
+		}
+		
+	}
+
+	&__new {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		background:$color-prim-100;
+		width: 66.5px;
+		height: 24px;
+		border-top-right-radius: 12px;
+		border-bottom-right-radius: 12px;
+		p {
+			margin: 0 0 0 20px;
+			font-family: 'Poppins';
+			font-size: 12px;
+			line-height: 24px;
+			color:$color-sec-500;
+		}
+	}
+
+	&__title {
+		margin: 20px 20px 0 20px;
+		font-size: 17px;
+		line-height: 23px;
+		color:$color-prim-100;
+		span {
+			color:$color-sec-200;
+			margin: 0 8px 0 0;
+		}
+	}
+
+	&__detail {
+		margin: 16px 20px 0 20px;
+		span {
+			margin: 0 16px 0 0;
+			font-weight: 300;
+			font-size: 14px;
+			color:$color-sec-200;
+			line-height: 19px;
+			position: relative;	
+		}
+
+	}
+	&__stick::after {
+		z-index: 5;
+		content: '|';
+		
+		position: absolute;
+		height: 18px;
+		width: 1px;
+		color: $color-sec-200;
+
+		top: 0;
+		left: -12px;
+	}
+	&__stick::before {
+		z-index: 5;
+		content: '|';
+		
+		position: absolute;
+		height: 18px;
+		width: 1px;
+		color: $color-sec-200;
+
+		top: 0;
+		left: 72px;
+	}
+
+	&__price {
+		margin: 26px 20px 35px 20px;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 27px;
+		color:$color-prim-100;
+	}
+
+	:hover > &__photo img {opacity: 90%;}
+	
+}
+
+.sold {
+	filter: grayscale(2);
+	position: relative;
+	cursor: not-allowed;
+	
+}
+
+
+.sold:after {
+	z-index: 510;
+	top: 63px;
+	left: 50%;
+	position: absolute;
+	content: "SOLD";
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: bold;
+	font-size: 50px;
+	line-height: 75px;
+	transform: translate3d(-50%, 0, 0);
+}
+
+.sold:before {
+	z-index: 500;
+	position: absolute;
+	top: 200px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(255, 255, 255, 55%);
+	content: " ";
+	
+}
+
+.subscr {
+	
+	background:$color-prim-100;
+	&__text {
+		margin: 40px 0 0 100px;
+		font-weight: 600;
+		font-size: 25px;
+		line-height: 34px;
+		p {
+			margin: 20px 0 46px 0;
+			font-weight: normal;
+			font-size: 15px;
+			line-height: 20px;
+		}
+	}
+	&__form {
+		margin: 55px 100px 0 95px;
+	}
+	&__email {
+		margin: 0 20px 0 0;
+		font-weight: normal;
+		font-size: 15px;
+		line-height: 20px;
+		width: 505px;
+		height: 54px;
+		background: transparent;
+		border: 1px solid $color-sec-300;
+		box-sizing: border-box;
+		border-radius: 15px;
+	}
+	&__email:focus {
+		background: $color-prim-200;
+		border: 1px solid $color-sec-300;
+		
+	}
+	&__email:focus::placeholder {color: transparent;}
+		
+	&__btn {
+		width: 190px;
+		height: 54px;
+		background:$color-prim-200;
+		color:$color-prim-100;
+		border-radius: 15px;
+		font-weight: normal;
+		font-size: 15px;
+		line-height: 20px;
+		transition: all 0.3s ease;
+	}
+	:hover > button {
+		background: $color-prim-100;
+		border: 1px solid $color-prim-200;
+		color: $color-prim-200;
+	}
+	
+}
+
+.faq {
+	&__title {
+		margin: 120px 0 56px 0;
+		text-align: center;
+		font-weight: bold;
+		font-size: 50px;
+		line-height: 75px;
+		text-transform: uppercase;
+		color:$color-sec-100;
+	}
+	&__qblock {
+		margin: 0 310px 200px 310px;
+	}
+}
+
+.block {
+
+}
+
+.aitem {
+	border: none!important;
+	background:$color-sec-500;
+	&__title{
+		
+		button {
+			height: 68px;
+			font-weight: 500;
+			font-size: 15px;
+			line-height: 20px;
+			color: #000000;
+			background:$color-prim-200;
+			border-bottom: 1px solid $color-sec-400 !important;
+			
+			
+		}
+		
+	}
+	&__btn:focus {
+			box-shadow: none !important;
+		}
+		
+	&__body{
+		
+		background:$color-sec-500;
+		margin: -25px 46px 0 39px;
+		
+		position: relative;
+		p {
+			text-align: justify;
+			margin: 8px 0 8px 0;
+			font-weight: normal;
+			font-size: 13px;
+			line-height: 150%;
+			color:$color-prim-100;
+			
+			background:$color-sec-500;
+		}
+		:last-child {
+			padding-bottom: 24px;
+		}
+		:first-child {
+			padding-top: 16px;
+		}
+	}
+	
+}
+
+
+
+
+.accordion-button:not(.collapsed) {
+	z-index: 5;
+	background:$color-sec-500;
+	color:$color-prim-300;
+	//box-shadow: none;
+	font-weight: bold;
+	padding: 0 0 0 39px;
+	top: -1px;
+	box-shadow: 0px 0px 18px rgba(68, 68, 68, 0.09);
+	clip-path: inset(-20px -20px 2px -20px);
+}
+
+.accordion-button::after {
+	content: "+";
+	font-size: 24px;
+	background: none;
+	transform: none;
+	
+	transform: translateX(-12px);
+}
+.accordion-button:not(.collapsed)::after {
+	content: "—";
+	font-size: 12px;
+
+	background: none;
+	
+	transform: translateX(-42px);
+}
+
+.accordion-collapse {
+	box-shadow: 0px 0px 18px rgba(68, 68, 68, 0.09);
+	
+}
+
+
